@@ -32,7 +32,8 @@ jobs:
           -i https://github.com/swiftlang/swift-syntax \
           -i tag=${{ inputs.swift_syntax_tag }} \
           -o SwiftSyntaxPrecompile \
-          -p "swift-syntax"
+          -p "swift-syntax" \ 
+          -v
 
     - run: |
         rm -Rf Sources
