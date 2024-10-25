@@ -24,6 +24,7 @@ jobs:
         xcode-version: latest-stable
 
     - run: |
+        unzip scipio.zip
         ls -l
         chmod +x scipio
         scipio precompile remote \
