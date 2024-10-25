@@ -27,7 +27,7 @@ jobs:
         unzip scipio.zip
         ls -l
         chmod +x scipio
-        scipio precompile remote \
+        ./scipio precompile remote \
           --upload-url https://github.com/${{ github.repository }}/releases/download/${{ inputs.swift_syntax_tag }} \
           -i https://github.com/swiftlang/swift-syntax \
           -i tag=${{ inputs.swift_syntax_tag }} \
