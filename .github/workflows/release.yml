@@ -34,6 +34,9 @@ jobs:
         git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/username/repo.git
     - run: |
         git clone https://github.com/yume190/TypeFill
+    - run: |
+        cd TypeFilll && \
+        git checkout 8d85559
 
     - run: |
         git clone https://github.com/PreternaturalAI/Scipio && \
