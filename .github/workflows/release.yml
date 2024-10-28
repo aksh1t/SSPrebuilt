@@ -50,7 +50,7 @@ jobs:
       with:
         commit_message: Updated for release ${{ inputs.swift_syntax_tag }}
         tagging_message: ${{ inputs.swift_syntax_tag }}
-        file_pattern: "*.swift Sources/*"
+        file_pattern: "Package.swift Sources/*"
     - uses: softprops/action-gh-release@v1
       with:
         draft: false
