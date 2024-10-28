@@ -35,6 +35,8 @@ jobs:
     - run: |
         git clone https://github.com/yume190/TypeFill
     - run: |
+        ls -al
+        pwd
         cd TypeFilll && \
         git checkout 8d85559
 
