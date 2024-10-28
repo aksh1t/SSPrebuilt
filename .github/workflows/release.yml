@@ -57,5 +57,5 @@ jobs:
         name: ${{ inputs.swift_syntax_tag }}
         tag_name: ${{ inputs.swift_syntax_tag }}
         body: Release from swift-syntax ${{ inputs.swift_syntax_tag }}
-        files: "*.xcframework.zip"
+        files: "${{ env.XCFRAMEWORKS_PATH }}/*.xcframework.zip"
         fail_on_unmatched_files: true
