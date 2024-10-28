@@ -27,7 +27,10 @@ jobs:
       with:
         xcode-version: latest-stable
 
+    
+
     - run: |
+        arch
         xcode-select -p
         unzip scipio.zip
         ls -l
