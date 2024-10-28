@@ -20,14 +20,35 @@ jobs:
       OUTPUT_PATH: SwiftSyntaxPrecompile
       XCFRAMEWORKS_PATH: SwiftSyntaxPrecompile/build/swift-syntax_Precompile/XCFrameworks
       NEW_SWIFT_SYNTAX_PATH: SwiftSyntaxPrecompile/build/swift-syntax_Precompile/XCFrameworks/packages/swift-syntax
+      SCIPIO_COMMIT: 14185fc
 
     steps:
     - uses: actions/checkout@v4
     - uses: maxim-lobanov/setup-xcode@v1
       with:
         xcode-version: latest-stable
+    - name: Setup Git authentication
+      run: |
+        git config --global user.name "github-actions"
+        git config --global user.email "github-actions@github.com"
+        git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/username/repo.git
+    - run: |
+        git clone https://github.com/yume190/TypeFill
 
-    
+    - run: |
+        git clone https://github.com/PreternaturalAI/Scipio && \
+        cd Scipio && \
+        git checkout 3fb4684 && \
+        swift build 
+        
+        swift run --package-path Scipio precompile remote \
+          --upload-url https://github.com/${{ github.repository }}/releases/download/${{ inputs.swift_syntax_tag }} \
+          -i https://github.com/swiftlang/swift-syntax \
+          -i tag=${{ inputs.swift_syntax_tag }} \
+          -o ${{ env.OUTPUT_PATH}} \
+          -p "swift-syntax" \
+          -v 2>&1
+
 
     - run: |
         arch
