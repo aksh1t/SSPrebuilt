@@ -29,18 +29,21 @@ jobs:
     - uses: maxim-lobanov/setup-xcode@v1
       with:
         xcode-version: latest-stable
+        
+    - name: Collect Workflow Telemetry
+      uses: catchpoint/workflow-telemetry-action@v2
     # - name: Setup Git authentication
     #   run: |
     #     git config --global user.name "github-actions"
     #     git config --global user.email "github-actions@github.com"
     #     git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/username/repo.git
-    - run: |
-        git clone https://github.com/yume190/TypeFill
-    - run: |
-        ls -al
-        pwd
-        cd TypeFill && \
-        git checkout 8d85559
+    # - run: |
+    #     git clone https://github.com/yume190/TypeFill
+    # - run: |
+    #     ls -al
+    #     pwd
+    #     cd TypeFill && \
+    #     git checkout 8d85559
 
     # - run: |
     #     git clone https://github.com/PreternaturalAI/Scipio && \
