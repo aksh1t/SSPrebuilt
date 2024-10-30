@@ -22,16 +22,18 @@ jobs:
       NEW_SWIFT_SYNTAX_PATH: SwiftSyntaxPrecompile/build/swift-syntax_Precompile/XCFrameworks/packages/swift-syntax
       SCIPIO_COMMIT: 14185fc
 
+    timeout-minutes: 60 # Increase this timeout value as needed
+
     steps:
     - uses: actions/checkout@v4
     - uses: maxim-lobanov/setup-xcode@v1
       with:
         xcode-version: latest-stable
-    - name: Setup Git authentication
-      run: |
-        git config --global user.name "github-actions"
-        git config --global user.email "github-actions@github.com"
-        git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/username/repo.git
+    # - name: Setup Git authentication
+    #   run: |
+    #     git config --global user.name "github-actions"
+    #     git config --global user.email "github-actions@github.com"
+    #     git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/username/repo.git
     - run: |
         git clone https://github.com/yume190/TypeFill
     - run: |
@@ -74,6 +76,7 @@ jobs:
         rm -f Packages.swift
         cp -r ${{ env.NEW_SWIFT_SYNTAX_PATH }}/Sources .
         cp ${{ env.NEW_SWIFT_SYNTAX_PATH }}/Package.swift .
+        ls -l
       
     - uses: stefanzweifel/git-auto-commit-action@v5
       with:
