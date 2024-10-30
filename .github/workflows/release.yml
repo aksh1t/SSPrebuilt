@@ -29,9 +29,11 @@ jobs:
     - uses: maxim-lobanov/setup-xcode@v1
       with:
         xcode-version: latest-stable
-        
-    - name: Collect Workflow Telemetry
-      uses: catchpoint/workflow-telemetry-action@v2
+
+    # - name: Collect Workflow Telemetry
+    #   uses: catchpoint/workflow-telemetry-action@v2
+    #   with:
+    #     github_token: ${{ secrets.GITHUB_TOKEN }}
     # - name: Setup Git authentication
     #   run: |
     #     git config --global user.name "github-actions"
@@ -72,7 +74,7 @@ jobs:
           -i tag=${{ inputs.swift_syntax_tag }} \
           -o ${{ env.OUTPUT_PATH}} \
           -p "swift-syntax" \
-          -v 2>&1
+          --enable-library-evolution
 
     - run: |
         rm -Rf Sources
