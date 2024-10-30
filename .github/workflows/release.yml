@@ -40,19 +40,19 @@ jobs:
         cd TypeFill && \
         git checkout 8d85559
 
-    - run: |
-        git clone https://github.com/PreternaturalAI/Scipio && \
-        cd Scipio && \
-        git checkout 3fb4684 && \
-        swift build 
+    # - run: |
+    #     git clone https://github.com/PreternaturalAI/Scipio && \
+    #     cd Scipio && \
+    #     git checkout 3fb4684 && \
+    #     swift build 
         
-        swift run --package-path Scipio precompile remote \
-          --upload-url https://github.com/${{ github.repository }}/releases/download/${{ inputs.swift_syntax_tag }} \
-          -i https://github.com/swiftlang/swift-syntax \
-          -i tag=${{ inputs.swift_syntax_tag }} \
-          -o ${{ env.OUTPUT_PATH}} \
-          -p "swift-syntax" \
-          -v 2>&1
+    #     swift run --package-path Scipio precompile remote \
+    #       --upload-url https://github.com/${{ github.repository }}/releases/download/${{ inputs.swift_syntax_tag }} \
+    #       -i https://github.com/swiftlang/swift-syntax \
+    #       -i tag=${{ inputs.swift_syntax_tag }} \
+    #       -o ${{ env.OUTPUT_PATH}} \
+    #       -p "swift-syntax" \
+    #       -v 2>&1
 
 
     - run: |
