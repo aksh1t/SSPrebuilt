@@ -73,8 +73,9 @@ jobs:
           -i https://github.com/swiftlang/swift-syntax \
           -i tag=${{ inputs.swift_syntax_tag }} \
           -o ${{ env.OUTPUT_PATH}} \
-          -p "swift-syntax" \
-          --enable-library-evolution
+          -p "swift-syntax" 
+
+# --enable-library-evolution
 
     - run: |
         rm -Rf Sources
