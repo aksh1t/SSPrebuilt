@@ -10,8 +10,8 @@ on:
 
 jobs:
   release:
-    # runs-on: macos-14
-    runs-on: ghcr.io/cirruslabs/macos-runner:sonoma
+    runs-on: macos-14
+    # runs-on: ghcr.io/cirruslabs/macos-runner:sonoma
     permissions:
       contents: write
 
