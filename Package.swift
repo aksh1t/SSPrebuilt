@@ -6,7 +6,7 @@ import Foundation
 func prebuiltTarget(
     name: String,
     xcframeworkName: String? = nil,
-    checksum: String
+    checksum: String,
     dependencies: [Target.Dependency] = []
 ) -> [Target] {
     let url = "https://github.com/godyume/SSPrebuilt/releases/download/600.0.0"
@@ -28,14 +28,14 @@ func prebuiltTarget(
 let targets: [[Target]] = [
     prebuiltTarget(
         name: "SwiftBasicFormat",
-        checksum: "e24b141c6e484fa59e16798061880668f003b708b7774e1151048a8ff9c83ab9",
+        checksum: "122c9542b497baf044f9b4d95db6a59712215d991b3c95a3b7165fa4e8005b4f",
         dependencies: [
             "SwiftSyntax_Aggregation",
         ]
     ),
     prebuiltTarget(
         name: "SwiftCompilerPlugin",
-        checksum: "623cf022cdc9b859ac1a60e34d4f465d28b13477ed38c3e8e5fccfd2a5b4710a",
+        checksum: "156de0a92574ae5ff4713633e918f48811069e1d1672f135867315d934c6e93f",
         dependencies: [
             "SwiftCompilerPluginMessageHandling_Aggregation",
             "SwiftSyntaxMacros_Aggregation",
@@ -43,14 +43,14 @@ let targets: [[Target]] = [
     ),
     prebuiltTarget(
         name: "SwiftDiagnostics",
-        checksum: "2ab201ec54631097bc074af25145a3f91df027dddc4af29436a3dab793cf2e5a",
+        checksum: "c6454cc1b1856b7bd4e65574f7dc37ed9bfc83e14db7aba0549e9a949896a834",
         dependencies: [
             "SwiftSyntax_Aggregation",
         ]
     ),
     prebuiltTarget(
         name: "SwiftIDEUtils",
-        checksum: "741f4c826c1bae88dc6da2b19f30e15a2c8b6c678ca24eba6764c4cac238a222",
+        checksum: "541b554d1328a3e609bd1c8fcacdbe1623a6002aa667ea4a4e7fb044691e0c94",
         dependencies: [
             "SwiftSyntax_Aggregation",
             "SwiftDiagnostics_Aggregation",
@@ -59,7 +59,7 @@ let targets: [[Target]] = [
     ),
     prebuiltTarget(
         name: "SwiftOperators",
-        checksum: "a976643881d9f9db1ab562f4ca28185f55571199d27f2dc033ed135f4a85ff96",
+        checksum: "7949aed236c0ffc060bc693445dc79179bcdb7d4d43acf3ecf0ccc5c9a3064f6",
         dependencies: [
             "SwiftDiagnostics_Aggregation",
             "SwiftParser_Aggregation",
@@ -68,14 +68,14 @@ let targets: [[Target]] = [
     ),
     prebuiltTarget(
         name: "SwiftParser",
-        checksum: "9bf1603d6e85905d89ce8669dfbf43447d9311d48f1a3a9bba792049e3fdd1f1",
+        checksum: "41cd20429364de21278eac370b45600862c1d295e4639830ef3f516481100124",
         dependencies: [
             "SwiftSyntax_Aggregation",
         ]
     ),
     prebuiltTarget(
         name: "SwiftParserDiagnostics",
-        checksum: "d67d3b686bfeba13bbf6932409ecf6ff5b713ed5a60f5681bd3f8c24638ac608",
+        checksum: "c0279cfd4c55ebc90545fcfd05b850401505a6ea874f91989257eec6ade913bd",
         dependencies: [
             "SwiftBasicFormat_Aggregation",
             "SwiftDiagnostics_Aggregation",
@@ -85,7 +85,7 @@ let targets: [[Target]] = [
     ),
     prebuiltTarget(
         name: "SwiftRefactor",
-        checksum: "b665dcd09b4598fb530aae5d0af78961a38f7aaf627f59ad06b8f0667949ee62",
+        checksum: "a8e58ac8c83a871a75d3216e6de8753b8789cf5aec4354dd975bd832df454fa6",
         dependencies: [
             "SwiftBasicFormat_Aggregation",
             "SwiftParser_Aggregation",
@@ -95,7 +95,7 @@ let targets: [[Target]] = [
     ),
     prebuiltTarget(
         name: "SwiftSyntax",
-        checksum: "842116cb4cc918e093e6f2dfdf93b9707df9d01f36c7d6e258b92ddbcac03e8c",
+        checksum: "7027ed71b4532f558f0a108e5efde46725fa860e5e0062246c6e14adbedf0b4e",
         dependencies: [
             "_SwiftSyntaxCShims_Aggregation",
             "SwiftSyntax509_Aggregation",
@@ -105,7 +105,7 @@ let targets: [[Target]] = [
     ),
     prebuiltTarget(
         name: "SwiftSyntaxBuilder",
-        checksum: "11de507cd914068e03462061faa98407d44b1587afc01b027c21162dc5e0fe8b",
+        checksum: "ee1ff1dffdd5a33567bbb5d4b3af74669686dd7a8a7ca05c852421e0ea92563b",
         dependencies: [
             "SwiftBasicFormat_Aggregation",
             "SwiftParser_Aggregation",
@@ -116,7 +116,7 @@ let targets: [[Target]] = [
     ),
     prebuiltTarget(
         name: "SwiftSyntaxMacros",
-        checksum: "bc476dcd6a31cb5bc68a1afc9b415dfd89e7a1bc75a007743908cceeae16ebb8",
+        checksum: "4c185d340e8106f7ed26624296ece056b924c1705c2f7a0daa9c1c123770e168",
         dependencies: [
             "SwiftDiagnostics_Aggregation",
             "SwiftParser_Aggregation",
@@ -126,7 +126,7 @@ let targets: [[Target]] = [
     ),
     prebuiltTarget(
         name: "SwiftSyntaxMacroExpansion",
-        checksum: "5e8455c77ff320e435430bbcd43f44f8ca98ba6d9f863bab84e31e04a0c39be6",
+        checksum: "24a7b831bcb2921661b6872b5c6d8f820e4dea5e55aeb6bb4598bc519fc5b568",
         dependencies: [
             "SwiftSyntax_Aggregation",
             "SwiftSyntaxBuilder_Aggregation",
@@ -137,7 +137,7 @@ let targets: [[Target]] = [
     ),
     prebuiltTarget(
         name: "SwiftSyntaxMacrosTestSupport",
-        checksum: "07694fac8fd1d08fba546a50fa60da016cbf851adbad7d57f18cea579995a8a5",
+        checksum: "088c5e37aec60a4a94f52a843dc881be52132ae7b3b00d4fcec9b808e314e1c5",
         dependencies: [
             "SwiftSyntax_Aggregation",
             "SwiftSyntaxMacroExpansion_Aggregation",
@@ -147,7 +147,7 @@ let targets: [[Target]] = [
     ),
     prebuiltTarget(
         name: "SwiftSyntaxMacrosGenericTestSupport",
-        checksum: "bccfda508e07249be129093ce2a1c49faebb1ce127edae756aa70c20ebf0b40d",
+        checksum: "16b7f15e775448a7941229dd14d3efdefb9ad2abcac2e4bdcdeb8e2dcec046c4",
         dependencies: [
             "_SwiftSyntaxGenericTestSupport_Aggregation",
             "SwiftDiagnostics_Aggregation",
@@ -159,7 +159,7 @@ let targets: [[Target]] = [
     ),
     prebuiltTarget(
         name: "SwiftCompilerPluginMessageHandling",
-        checksum: "aa6f01f43899cd4c10125f96d73bbfa7ff577adb3c995413b05266e34878c7e7",
+        checksum: "0b963dbf5996d395de168bcaf91c95588ade483682f3b7d417a026297b1d6cac",
         dependencies: [
             "_SwiftSyntaxCShims_Aggregation",
             "SwiftDiagnostics_Aggregation",
@@ -172,7 +172,7 @@ let targets: [[Target]] = [
     ),
     prebuiltTarget(
         name: "SwiftLibraryPluginProvider",
-        checksum: "a7da53f9590c570ea633a1ef88a290d19ccc2ca34433054c53b457d4bc3dba2d",
+        checksum: "82ac03472af0f10d3febad9486b6a38f931dcd00c5846c002e4c791fa1319d5f",
         dependencies: [
             "SwiftSyntaxMacros_Aggregation",
             "SwiftCompilerPluginMessageHandling_Aggregation",
@@ -181,27 +181,27 @@ let targets: [[Target]] = [
     ),
     prebuiltTarget(
         name: "_SwiftSyntaxGenericTestSupport",
-        checksum: "86fdd927eb13e32912c8396a14d7c14e2bc3b380d76827f877aac4480c69e5c9"
+        checksum: "bd8434ce08b0063bd7a45bcb5907e460a4382611269a299c72bcccf7c49aa9a5"
     ),
     prebuiltTarget(
         name: "_SwiftSyntaxCShims",
-        checksum: "85b5a7e155a217f4b4dfafd85d78b415e49e010ec96483c2bb2d5aaf44b38d3b"
+        checksum: "06e0a80590182d2ed0e3bf1f6c6d897f030eeabaf20462588ec26a78286068db"
     ),
     prebuiltTarget(
         name: "_SwiftLibraryPluginProviderCShims",
-        checksum: "b37c77b7197dd2c01a36e255bc1daa1b6967fa382f8cd7dd4d62e7e565e4612f"
+        checksum: "57d50fd9c5b6d6a0df4ee22df8eec5ccbcad4f55d2490aa94bc5cecf3487ffbe"
     ),
     prebuiltTarget(
         name: "SwiftSyntax600",
-        checksum: "75d0522501217fc84090ab9efacdfadc51ba9106b88ad2178ce6af55d3f9b5b0"
+        checksum: "49b38f8e62cfadfdadc8a39cb43d19662ab0fddee0c9a4e4b0cbdf9608d3b784"
     ),
     prebuiltTarget(
         name: "SwiftSyntax510",
-        checksum: "9c1aeb62e615d4440397d54cccb4010610833fb45e003796eaccf558af68e691"
+        checksum: "0d676cb6d9bcf3c1f9d32aa195bdd47f2baf0664da1b958e888aba1b10db9145"
     ),
     prebuiltTarget(
         name: "SwiftSyntax509",
-        checksum: "942a8a50f0ecffc805aed262b9d68928c2684e47f1f1e00ee87c94c29b25969e"
+        checksum: "d7f831b2a07f10ba4981022fa7f4e31e09d38d69f81e1cdb4311e1592d35cb5e"
     ),
 ]
 
