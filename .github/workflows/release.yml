@@ -74,6 +74,7 @@ jobs:
           -i tag=${{ inputs.swift_syntax_tag }} \
           -o ${{ env.OUTPUT_PATH}} \
           -p "swift-syntax" \
+          -v \
           2>&1
 
 # --enable-library-evolution
