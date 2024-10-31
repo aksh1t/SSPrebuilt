@@ -10,8 +10,8 @@ on:
 
 jobs:
   release:
-    runs-on: macos-14
-
+    # runs-on: macos-14
+    runs-on: ghcr.io/cirruslabs/macos-runner:sonoma
     permissions:
       contents: write
 
@@ -73,7 +73,8 @@ jobs:
           -i https://github.com/swiftlang/swift-syntax \
           -i tag=${{ inputs.swift_syntax_tag }} \
           -o ${{ env.OUTPUT_PATH}} \
-          -p "swift-syntax" 
+          -p "swift-syntax" \
+          2>&1
 
 # --enable-library-evolution
 
